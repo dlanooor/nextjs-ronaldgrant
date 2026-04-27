@@ -4,8 +4,8 @@ import { about, sections } from "@/lib/portfolio-data";
 
 export function AboutSection() {
   return (
-    <section id="about" className="bg-white py-24 sm:py-32 dark:bg-neutral-950">
-      <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <section id="about" className="bg-white py-20 sm:py-32 dark:bg-neutral-950">
+      <Container className="grid gap-10 sm:gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionHeading {...sections.about} />
 
         <div className="reveal reveal-delay-1 space-y-9">

@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { projectArchive, projects, sections } from "@/lib/portfolio-data";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="bg-white py-24 sm:py-32 dark:bg-neutral-950">
+    <section id="works" className="bg-white py-20 sm:py-32 dark:bg-neutral-950">
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading {...sections.projects} />
@@ -18,7 +20,7 @@ export function ProjectsSection() {
           </a>
         </div>
 
-        <div className="reveal reveal-delay-1 mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="reveal reveal-delay-1 mt-10 grid gap-5 sm:mt-12 lg:grid-cols-3">
           {projects.map((project, index) => (
             <article
               key={project.title}
@@ -28,7 +30,22 @@ export function ProjectsSection() {
                 className="h-1.5"
                 style={{ backgroundColor: projectAccent(index) }}
               />
-              <div className="flex flex-1 flex-col p-7">
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
+                <div className="mb-6 flex items-center justify-between gap-4">
+                  <div className="grid size-14 shrink-0 place-items-center rounded-xl border border-neutral-950/10 bg-white p-2 shadow-sm dark:border-white/10 dark:bg-white">
+                    <Image
+                      src={project.company.logo.src}
+                      alt={project.company.logo.alt}
+                      width={56}
+                      height={56}
+                      unoptimized
+                      className="max-h-10 w-auto"
+                    />
+                  </div>
+                  <span className="rounded-full border border-neutral-950/10 bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600 dark:border-white/10 dark:bg-neutral-800 dark:text-neutral-300">
+                    {project.company.name}
+                  </span>
+                </div>
                 <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-white">
                   {project.title}
                 </h3>

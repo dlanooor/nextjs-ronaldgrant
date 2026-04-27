@@ -4,15 +4,15 @@ import { experience, sections } from "@/lib/portfolio-data";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="border-y border-neutral-950/10 bg-[#f3f6f1] py-24 sm:py-32 dark:border-white/10 dark:bg-neutral-900">
-      <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+    <section id="experience" className="border-y border-neutral-950/10 bg-[#f3f6f1] py-20 sm:py-32 dark:border-white/10 dark:bg-neutral-900">
+      <Container className="grid gap-10 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeading {...sections.experience} />
 
         <div className="reveal reveal-delay-1 space-y-5">
           {experience.map((item) => (
             <article
               key={`${item.company}-${item.role}`}
-              className="premium-card card-lift rounded-xl border border-l-4 border-neutral-950/10 border-l-emerald-600/70 bg-white p-6 dark:border-white/10 dark:border-l-emerald-300/70 dark:bg-neutral-950"
+              className="premium-card card-lift rounded-xl border border-l-4 border-neutral-950/10 border-l-emerald-600/70 bg-white p-5 sm:p-6 dark:border-white/10 dark:border-l-emerald-300/70 dark:bg-neutral-950"
             >
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>

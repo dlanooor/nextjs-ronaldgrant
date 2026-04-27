@@ -8,11 +8,11 @@ export const profile = {
   shortIntro:
     "I help high-traffic digital products ship with confidence through end-to-end testing, API validation, automation, and structured quality strategy.",
   heroImage: {
-    src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-    alt: "A clean modern workspace with a laptop, notebook, and soft natural light",
+    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    alt: "A software developer workspace with code open on a laptop screen",
   },
   ctas: [
-    { label: "View quality work", href: "#projects", variant: "primary" },
+    { label: "View quality work", href: "#works", variant: "primary" },
     {
       label: "Contact me",
       href: "mailto:ronaldgrantt@gmail.com",
@@ -22,6 +22,7 @@ export const profile = {
   socials: [
     { label: "GitHub", href: "https://github.com/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ronald-grant/" },
+    { label: "Instagram", href: "https://www.instagram.com/ronaldgrnt/" },
     { label: "Email", href: "mailto:ronaldgrantt@gmail.com" },
   ],
 };
@@ -29,15 +30,15 @@ export const profile = {
 export const navigation = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
+  { label: "Works", href: "#works" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const heroStats = [
-  { value: "5+", label: "Years in QA" },
+  { value: "4+", label: "Years in QA" },
   { value: "500+", label: "Connections" },
-  { value: "1.3k+", label: "Followers" },
+  { value: "1.3k+", label: "Followers on LinkedIn" },
 ];
 
 export const hero = {
@@ -61,7 +62,7 @@ export const sections = {
       "A practical QA toolkit shaped by marketplace, travel, mobile development, and automation experience.",
   },
   projects: {
-    eyebrow: "Projects",
+    eyebrow: "Works",
     title: "Selected quality work and product domains.",
     description:
       "A snapshot of the product quality areas, automation work, and mentoring contributions reflected in my LinkedIn profile.",
@@ -107,9 +108,10 @@ export const skills = [
   {
     group: "Automation & Tools",
     items: [
-      "QA Automation",
       "Selenium",
       "Cucumber",
+      "Appium",
+      "Playwright",
       "Jenkins",
       "Maven",
       "Jira",
@@ -130,7 +132,14 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Shopee Marketplace Quality Validation",
+    title: "QA Engineer @ Shopee",
+    company: {
+      name: "Shopee",
+      logo: {
+        src: "https://media.licdn.com/dms/image/v2/C560BAQE0iX_dgdH7nA/company-logo_200_200/company-logo_200_200/0/1672279162763/shopee_logo?e=1778716800&v=beta&t=JNrwV67iEPEIpQBhbK9lkw0fPk6ijKpJBlqr5HwhkuE",
+        alt: "Shopee logo",
+      },
+    },
     description:
       "End-to-end testing for Shopee RN and Web workflows, including order creation, pre-fulfillment, return eligibility, refund calculation, logistics handling, and status transitions.",
     tags: ["E2E testing", "API specs", "Regression", "AI-assisted QA"],
@@ -140,7 +149,14 @@ export const projects = [
     ],
   },
   {
-    title: "Traveloka Transport Quality Systems",
+    title: "QA Engineer @ Traveloka",
+    company: {
+      name: "Traveloka",
+      logo: {
+        src: "https://media.licdn.com/dms/image/v2/D560BAQGe_izwxvj_SQ/company-logo_200_200/company-logo_200_200/0/1700635813325/traveloka_logo?e=1778716800&v=beta&t=5JUx4mXC-tfqHqB6dul2aK6HbEeJeB4BFesBkcCcbu4",
+        alt: "Traveloka logo",
+      },
+    },
     description:
       "Manual and automation quality work for Transport products across mobile app, web, backend systems, booking, payment, post-booking, and data tracking flows.",
     tags: ["Mobile QA", "Web QA", "Backend QA", "Test plans"],
@@ -150,7 +166,14 @@ export const projects = [
     ],
   },
   {
-    title: "QA Automation at Blibli.com",
+    title: "SDET Intern @ Blibli.com",
+    company: {
+      name: "Blibli.com",
+      logo: {
+        src: "https://media.licdn.com/dms/image/v2/D560BAQEM4-XppAnUYg/company-logo_100_100/company-logo_100_100/0/1696380991614/blibli_logo?e=1778716800&v=beta&t=Q3-XtebCFNJYAcNPUvt5apYKVSV6gizJ7iXiZ8rWF28",
+        alt: "Blibli.com logo",
+      },
+    },
     description:
       "Developed and maintained automated test scripts, functional scenarios, and regression checks, with automation integrated into CI/CD workflows.",
     tags: ["Selenium", "Cucumber", "Jenkins", "Maven"],

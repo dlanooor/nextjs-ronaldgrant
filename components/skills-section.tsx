@@ -4,15 +4,15 @@ import { sections, skills } from "@/lib/portfolio-data";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="border-y border-neutral-950/10 bg-[#f3f6f1] py-24 sm:py-32 dark:border-white/10 dark:bg-neutral-900">
+    <section id="skills" className="border-y border-neutral-950/10 bg-[#f3f6f1] py-20 sm:py-32 dark:border-white/10 dark:bg-neutral-900">
       <Container>
         <SectionHeading {...sections.skills} />
 
-        <div className="reveal reveal-delay-1 mt-12 grid gap-5 md:grid-cols-3">
+        <div className="reveal reveal-delay-1 mt-10 grid gap-5 sm:mt-12 md:grid-cols-3">
           {skills.map((skillGroup) => (
             <article
               key={skillGroup.group}
-              className="premium-card card-lift rounded-xl border border-neutral-950/10 bg-white p-7 dark:border-white/10 dark:bg-neutral-950 dark:hover:border-white/20"
+              className="premium-card card-lift rounded-xl border border-neutral-950/10 bg-white p-5 sm:p-7 dark:border-white/10 dark:bg-neutral-950 dark:hover:border-white/20"
             >
               <h3 className="font-display text-xl font-semibold text-neutral-950 dark:text-white">
                 {skillGroup.group}
