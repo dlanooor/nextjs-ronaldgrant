@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { AnimatedStatValue } from "@/components/animated-stat-value";
 import { Container } from "@/components/container";
 import { hero, heroStats, profile } from "@/lib/portfolio-data";
 
@@ -47,7 +48,7 @@ export function HeroSection() {
                 className="premium-card card-lift rounded-xl border border-neutral-950/10 bg-white/90 p-4 backdrop-blur dark:border-white/10 dark:bg-neutral-900/90"
               >
                 <dt className="font-display text-2xl font-semibold text-neutral-950 sm:text-3xl dark:text-white">
-                  {stat.value}
+                  <AnimatedStatValue value={stat.value} />
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-neutral-500 dark:text-neutral-400">
                   {stat.label}

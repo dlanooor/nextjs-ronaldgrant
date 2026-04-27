@@ -37,8 +37,8 @@ export const navigation = [
 
 export const heroStats = [
   { value: "4+", label: "Years in QA" },
-  { value: "500+", label: "Connections" },
-  { value: "1.3k+", label: "Followers on LinkedIn" },
+  { value: "539+", label: "Feature Released" },
+  { value: "1.3k+", label: "Test Case Created" },
 ];
 
 export const hero = {
