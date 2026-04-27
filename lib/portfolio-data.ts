@@ -121,11 +121,10 @@ export const skills = [
     group: "Technical Background",
     items: [
       "Kotlin",
-      "Android development",
-      "Backend validation",
-      "Network infrastructure",
-      "Confluence",
-      "Bitbucket",
+      "Android Development",
+      "Backend Validation",
+      "Web Development",
+      "CI/CD",
     ],
   },
 ];
