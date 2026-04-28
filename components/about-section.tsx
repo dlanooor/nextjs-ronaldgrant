@@ -15,7 +15,7 @@ export function AboutSection() {
             ))}
           </div>
 
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="stagger-list grid gap-3 sm:grid-cols-2">
             {about.highlights.map((highlight) => (
               <li
                 key={highlight}

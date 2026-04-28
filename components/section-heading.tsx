@@ -17,7 +17,7 @@ export function SectionHeading({
     <div className="reveal max-w-3xl">
       <p
         className={`font-mono text-xs font-semibold uppercase ${
-          isDark ? "text-emerald-300" : "text-emerald-700 dark:text-emerald-300"
+          isDark ? "text-pink-300" : "text-pink-700 dark:text-pink-300"
         }`}
       >
         {eyebrow}

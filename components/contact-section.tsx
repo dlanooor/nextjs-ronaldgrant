@@ -20,7 +20,7 @@ export function ContactSection() {
             <div className="flex flex-col gap-4">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 py-3 text-center text-sm font-semibold text-neutral-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 dark:hover:bg-neutral-200"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 py-3 text-center text-sm font-semibold text-neutral-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300 dark:hover:bg-neutral-200"
               >
                 {profile.email}
               </a>
@@ -31,7 +31,7 @@ export function ContactSection() {
                     href={social.href}
                     target={social.href.startsWith("http") ? "_blank" : undefined}
                     rel={social.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white/80 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 sm:flex-none"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white/80 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300 sm:flex-none"
                   >
                     <SocialIcon label={social.label} />
                     {social.label}

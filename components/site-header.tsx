@@ -49,7 +49,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block rounded-lg px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-emerald-400"
+                  className="block rounded-lg px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-pink-400"
                 >
                   {item.label}
                 </a>
@@ -66,7 +66,7 @@ export function SiteHeader() {
             aria-controls="mobile-navigation"
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setIsMenuOpen((current) => !current)}
-            className="inline-flex size-10 items-center justify-center rounded-xl border border-neutral-950/15 bg-neutral-100 text-neutral-950 shadow-sm transition hover:border-neutral-950/25 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 md:hidden dark:border-white/15 dark:bg-neutral-800 dark:text-white dark:hover:border-white/25 dark:hover:bg-neutral-700 dark:focus-visible:ring-emerald-400"
+            className="inline-flex size-10 items-center justify-center rounded-xl border border-neutral-950/15 bg-neutral-100 text-neutral-950 shadow-sm transition hover:border-neutral-950/25 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 md:hidden dark:border-white/15 dark:bg-neutral-800 dark:text-white dark:hover:border-white/25 dark:hover:bg-neutral-700 dark:focus-visible:ring-pink-400"
           >
             <span aria-hidden="true" className="relative size-5">
               <span
@@ -103,7 +103,7 @@ export function SiteHeader() {
                 <a
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block rounded-xl px-4 py-3 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-emerald-400"
+                  className="block rounded-xl px-4 py-3 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-pink-400"
                 >
                   {item.label}
                 </a>

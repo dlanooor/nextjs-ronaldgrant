@@ -98,40 +98,59 @@ export const skills = [
   {
     group: "Quality Engineering",
     items: [
-      "End-to-end testing",
-      "API testing",
-      "Regression testing",
-      "Test strategy",
-      "Product validation",
+      {
+        label: "Testing Coverage",
+        values: ["End-to-end testing", "API testing", "Regression testing"],
+      },
+      {
+        label: "Test Strategy",
+        values: ["Test planning", "Test case design", "Risk-based validation"],
+      },
+      {
+        label: "Product Quality",
+        values: ["Product validation", "Edge-case discovery", "Release readiness"],
+      },
     ],
   },
   {
     group: "Automation & Tools",
     items: [
-      "Selenium",
-      "Cucumber",
-      "Appium",
-      "Playwright",
-      "Jenkins",
-      "Maven",
-      "Jira",
+      {
+        label: "Automation Frameworks",
+        values: ["Selenium", "Cucumber", "Appium", "Playwright"],
+      },
+      {
+        label: "CI/CD and Build Tools",
+        values: ["Jenkins", "Maven", "Git", "Bitbucket"],
+      },
+      {
+        label: "Team Workflow",
+        values: ["Jira", "Confluence", "test data preparation", "log analysis"],
+      },
     ],
   },
   {
     group: "Technical Background",
     items: [
-      "Kotlin",
-      "Android Development",
-      "Backend Validation",
-      "Web Development",
-      "CI/CD",
+      {
+        label: "Programming and Mobile",
+        values: ["Kotlin", "Android Development", "mobile QA workflows"],
+      },
+      {
+        label: "Backend and APIs",
+        values: ["Backend Validation", "API specs", "data tracking"],
+      },
+      {
+        label: "Web and Delivery",
+        values: ["Web Development", "CI/CD", "cross-platform validation"],
+      },
     ],
   },
 ];
 
 export const projects = [
   {
-    title: "QA Engineer @ Shopee",
+    title: "QA Engineer",
     company: {
       name: "Shopee",
       logo: {
@@ -143,12 +162,12 @@ export const projects = [
       "End-to-end testing for Shopee RN and Web workflows, including order creation, pre-fulfillment, return eligibility, refund calculation, logistics handling, and status transitions.",
     tags: ["E2E testing", "API specs", "Regression", "AI-assisted QA"],
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/ronald-grant/" },
-      { label: "Contact", href: "mailto:ronaldgrantt@gmail.com" },
+      { label: "Website", href: "https://shopee.com/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/shopee/" },
     ],
   },
   {
-    title: "QA Engineer @ Traveloka",
+    title: "QA Engineer",
     company: {
       name: "Traveloka",
       logo: {
@@ -160,12 +179,12 @@ export const projects = [
       "Manual and automation quality work for Transport products across mobile app, web, backend systems, booking, payment, post-booking, and data tracking flows.",
     tags: ["Mobile QA", "Web QA", "Backend QA", "Test plans"],
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/ronald-grant/" },
-      { label: "Contact", href: "mailto:ronaldgrantt@gmail.com" },
+      { label: "Website", href: "https://traveloka.com/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/traveloka/" },
     ],
   },
   {
-    title: "SDET Intern @ Blibli.com",
+    title: "SDET Intern",
     company: {
       name: "Blibli.com",
       logo: {
@@ -177,8 +196,8 @@ export const projects = [
       "Developed and maintained automated test scripts, functional scenarios, and regression checks, with automation integrated into CI/CD workflows.",
     tags: ["Selenium", "Cucumber", "Jenkins", "Maven"],
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/ronald-grant/" },
-      { label: "Contact", href: "mailto:ronaldgrantt@gmail.com" },
+      { label: "Website", href: "https://www.blibli.com/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/blibli/" },
     ],
   },
 ];
@@ -193,6 +212,7 @@ export const experience = [
     role: "Trainer Essential - PIDI Digdaya x Hackathon 2026",
     company: "Central Bank of Indonesia",
     period: "Apr 2026 - Present",
+    location: "Jakarta, Indonesia",
     summary:
       "Supporting technical training and participant readiness for a national hackathon program.",
   },
@@ -200,6 +220,7 @@ export const experience = [
     role: "Quality Assurance Mentor",
     company: "Dibimbing",
     period: "Mar 2026 - Present",
+    location: "Jakarta, Indonesia",
     summary:
       "Mentoring learners on practical QA workflows, testing fundamentals, and structured software quality practices.",
   },
@@ -207,6 +228,7 @@ export const experience = [
     role: "QA Engineer - MPL & Pre-fulfillment",
     company: "Shopee",
     period: "Dec 2024 - Present",
+    location: "Jakarta, Indonesia",
     summary:
       "Performing end-to-end testing on RN and Web order creation and pre-fulfillment flows, designing regression scenarios, and using AI tools to accelerate test case generation, edge case discovery, test data preparation, and log analysis.",
   },
@@ -214,6 +236,7 @@ export const experience = [
     role: "QA Engineer - Return",
     company: "Shopee",
     period: "Jul 2024 - Jan 2025",
+    location: "Jakarta, Indonesia",
     summary:
       "Validated return and refund flows across RN and Web platforms, including eligibility rules, refund calculation, logistics handling, API specifications, and status transitions.",
   },
@@ -221,6 +244,7 @@ export const experience = [
     role: "Quality Assurance Engineer - Transport",
     company: "Traveloka",
     period: "May 2023 - Jun 2024",
+    location: "Jakarta, Indonesia",
     summary:
       "Maintained manual and automation quality for Ground Transport products across mobile app, web, backend systems, booking, payment, post-booking, and data tracking workflows.",
   },
@@ -228,6 +252,7 @@ export const experience = [
     role: "SDET Intern",
     company: "Blibli.com",
     period: "May 2022 - May 2023",
+    location: "Jakarta, Indonesia",
     summary:
       "Developed Selenium and Cucumber automated test scripts, executed functional and regression scenarios, and integrated automated tests into CI/CD pipelines with Jenkins and Maven.",
   },

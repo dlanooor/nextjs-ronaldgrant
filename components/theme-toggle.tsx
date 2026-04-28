@@ -38,7 +38,7 @@ export function ThemeToggle() {
       aria-checked={isDark}
       aria-label="Toggle dark mode"
       onClick={toggleTheme}
-      className="grid h-10 w-32 shrink-0 grid-cols-2 gap-1 overflow-hidden rounded-full border border-neutral-950/15 bg-neutral-100 p-1 shadow-sm transition hover:border-neutral-950/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 sm:w-36 dark:border-white/15 dark:bg-neutral-800 dark:hover:border-white/25 dark:focus-visible:ring-emerald-400"
+      className="grid h-10 w-32 shrink-0 grid-cols-2 gap-1 overflow-hidden rounded-full border border-neutral-950/15 bg-neutral-100 p-1 shadow-sm transition hover:border-neutral-950/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 sm:w-36 dark:border-white/15 dark:bg-neutral-800 dark:hover:border-white/25 dark:focus-visible:ring-pink-400"
     >
       <span className="sr-only">{isDark ? "Use light mode" : "Use dark mode"}</span>
       <span

@@ -12,7 +12,7 @@ export function HeroSection() {
     >
       <Container className="grid items-center gap-10 py-16 sm:py-20 md:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:py-24 xl:py-28">
         <div className="animate-fade-up">
-          <p className="inline-flex rounded-full border border-emerald-700/20 bg-emerald-50 px-4 py-2 font-mono text-xs font-semibold uppercase text-emerald-800 shadow-sm shadow-emerald-900/5 dark:border-emerald-300/20 dark:bg-emerald-400/10 dark:text-emerald-200">
+          <p className="inline-flex rounded-full border border-pink-700/20 bg-pink-50 px-4 py-2 font-mono text-xs font-semibold uppercase text-pink-800 shadow-sm shadow-pink-900/5 dark:border-pink-300/20 dark:bg-pink-400/10 dark:text-pink-200">
             {hero.availability}
           </p>
           <h1 className="mt-6 max-w-3xl font-display text-5xl font-semibold leading-[0.95] text-neutral-950 sm:mt-7 sm:text-7xl lg:text-8xl dark:text-white">
@@ -32,8 +32,8 @@ export function HeroSection() {
                 href={cta.href}
                 className={
                   cta.variant === "primary"
-                    ? "inline-flex h-12 items-center justify-center rounded-xl bg-neutral-950 px-5 text-sm font-semibold text-white shadow-lg shadow-neutral-950/15 transition hover:-translate-y-0.5 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200 dark:focus-visible:ring-emerald-400"
-                    : "inline-flex h-12 items-center justify-center rounded-xl border border-neutral-950/15 bg-white px-5 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-950/30 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:border-white/15 dark:bg-neutral-900 dark:text-white dark:hover:border-white/30 dark:hover:bg-neutral-800 dark:focus-visible:ring-emerald-400"
+                    ? "inline-flex h-12 items-center justify-center rounded-xl bg-neutral-950 px-5 text-sm font-semibold text-white shadow-lg shadow-neutral-950/15 transition hover:-translate-y-0.5 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200 dark:focus-visible:ring-pink-400"
+                    : "inline-flex h-12 items-center justify-center rounded-xl border border-neutral-950/15 bg-white px-5 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-950/30 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-white/15 dark:bg-neutral-900 dark:text-white dark:hover:border-white/30 dark:hover:bg-neutral-800 dark:focus-visible:ring-pink-400"
                 }
               >
                 {cta.label}

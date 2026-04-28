@@ -18,7 +18,7 @@ export function SkillsSection() {
       <Container>
         <SectionHeading {...sections.skills} />
 
-        <div className="reveal reveal-delay-1 mt-10 grid gap-5 sm:mt-12 md:grid-cols-3">
+        <div className="reveal reveal-delay-1 stagger-list mt-10 grid gap-5 sm:mt-12 md:grid-cols-3">
           {skills.map((skillGroup) => {
             const Icon = skillIcons[skillGroup.group] ?? CodeIcon;
 
@@ -28,20 +28,31 @@ export function SkillsSection() {
                 className="premium-card card-lift rounded-xl border border-neutral-950/10 bg-white p-5 sm:p-7 dark:border-white/10 dark:bg-neutral-950 dark:hover:border-white/20"
               >
                 <div className="flex items-center gap-4">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-emerald-700/15 bg-emerald-50 text-emerald-700 shadow-sm shadow-emerald-950/5 dark:border-emerald-300/15 dark:bg-emerald-400/10 dark:text-emerald-300">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-pink-700/15 bg-pink-50 text-pink-700 shadow-sm shadow-pink-950/5 dark:border-pink-300/15 dark:bg-pink-400/10 dark:text-pink-300">
                     <Icon className="size-6" />
                   </span>
                   <h3 className="font-display text-xl font-semibold text-neutral-950 dark:text-white">
                     {skillGroup.group}
                   </h3>
                 </div>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-6 space-y-4">
                   {skillGroup.items.map((skill) => (
                     <li
-                      key={skill}
-                      className="rounded-lg bg-neutral-100 px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-emerald-50 hover:text-emerald-800 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-200"
+                      key={skill.label}
+                      className="flex gap-3 rounded-lg border border-neutral-950/10 bg-neutral-50 px-4 py-3 transition hover:border-pink-700/20 hover:bg-pink-50 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-pink-300/20 dark:hover:bg-pink-400/10"
                     >
-                      {skill}
+                      <span
+                        aria-hidden="true"
+                        className="mt-0.5 font-mono text-sm font-semibold text-pink-700 dark:text-pink-300"
+                      >
+                        &gt;
+                      </span>
+                      <span className="text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                        <span className="font-semibold text-neutral-950 dark:text-white">
+                          {skill.label}:
+                        </span>{" "}
+                        {skill.values.join(", ")}
+                      </span>
                     </li>
                   ))}
                 </ul>
