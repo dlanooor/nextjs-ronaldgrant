@@ -20,7 +20,7 @@ export const profile = {
     },
   ],
   socials: [
-    { label: "GitHub", href: "https://github.com/" },
+    { label: "GitHub", href: "https://github.com/dlanooor" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ronald-grant/" },
     { label: "Instagram", href: "https://www.instagram.com/ronaldgrnt/" },
     { label: "Email", href: "mailto:ronaldgrantt@gmail.com" },
