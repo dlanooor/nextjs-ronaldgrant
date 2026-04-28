@@ -32,6 +32,7 @@ export const navigation = [
   { label: "Skills", href: "#skills" },
   { label: "Works", href: "#works" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -72,6 +73,12 @@ export const sections = {
     title: "Experience across QA, automation, mentoring, and product teams.",
     description:
       "Roles spanning high-traffic commerce, transport products, QA automation, and technical mentoring.",
+  },
+  education: {
+    eyebrow: "Education",
+    title: "Academic background.",
+    description:
+      "Formal education that made me me",
   },
   contact: {
     eyebrow: "Contact",
@@ -255,6 +262,21 @@ export const experience = [
     location: "Jakarta, Indonesia",
     summary:
       "Developed Selenium and Cucumber automated test scripts, executed functional and regression scenarios, and integrated automated tests into CI/CD pipelines with Jenkins and Maven.",
+  },
+];
+
+export const education = [
+  {
+    school: "University of Indonesia",
+    major: "Engineer's degree, Computer Engineering",
+    period: "Jun 2019 - Jun 2023",
+    grade: "3.89 / 4.00 (Magna Cum Laude)",
+  },
+  {
+    school: "SMAK Penabur Bintaro Jaya",
+    major: "High School Diploma, Natural Sciences",
+    period: "Jun 2016 - Jun 2019",
+    grade: "38.4 / 40",
   },
 ];
 

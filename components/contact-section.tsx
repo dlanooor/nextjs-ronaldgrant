@@ -4,9 +4,12 @@ import { profile, sections } from "@/lib/portfolio-data";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-white py-20 sm:py-32 dark:bg-neutral-950">
+    <section
+      id="contact"
+      className="border-y border-neutral-950/10 bg-[#f8f1f5] py-20 sm:py-32 dark:border-white/10 dark:bg-[#151014]"
+    >
       <Container>
-        <div className="premium-card reveal overflow-hidden rounded-2xl border border-neutral-950/10 bg-neutral-950 p-6 text-white sm:p-12 dark:border-white/10 dark:bg-neutral-900">
+        <div className="premium-card reveal overflow-hidden rounded-2xl border border-neutral-950/10 bg-neutral-950 p-6 text-white sm:p-12 dark:border-white/10 dark:bg-neutral-950">
           <div className="grid gap-10 sm:gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <div>
               <SectionHeading
