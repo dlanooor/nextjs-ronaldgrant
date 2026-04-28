@@ -33,6 +33,7 @@ export const navigation = [
   { label: "Works", href: "#works" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Docs", href: "#downloads" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -79,6 +80,12 @@ export const sections = {
     title: "Academic background.",
     description:
       "Formal education that made me me",
+  },
+  downloads: {
+    eyebrow: "Downloads",
+    title: "Resume and cover letter.",
+    description:
+      "Download my latest hiring documents or preview them through Google Drive.",
   },
   contact: {
     eyebrow: "Contact",
@@ -271,12 +278,41 @@ export const education = [
     major: "Engineer's degree, Computer Engineering",
     period: "Jun 2019 - Jun 2023",
     grade: "3.89 / 4.00 (Magna Cum Laude)",
+    logo: {
+      src: "https://media.licdn.com/dms/image/v2/C4D0BAQE_PrK97K5Veg/company-logo_200_200/company-logo_200_200/0/1631366982263?e=1778716800&v=beta&t=tMwiOIryimGjzL304zBB2XnJojEWNW6mIoKkbBpyv3Y",
+      alt: "University of Indonesia logo",
+    },
   },
   {
     school: "SMAK Penabur Bintaro Jaya",
     major: "High School Diploma, Natural Sciences",
     period: "Jun 2016 - Jun 2019",
     grade: "38.4 / 40",
+    logo: {
+      src: "https://media.licdn.com/dms/image/v2/C560BAQHa2-DwClM84Q/company-logo_200_200/company-logo_200_200/0/1641538281284?e=1778716800&v=beta&t=C1IAfi-dvHiiuTRhJFufabqWeBkxwLxpCHIIfBeS42s",
+      alt: "SMAK Penabur Bintaro Jaya logo",
+    },
+  },
+];
+
+export const documents = [
+  {
+    title: "Resume",
+    description:
+      "A concise overview of QA engineering experience, automation tools, product domains, and education.",
+    fileType: "PDF",
+    href: "https://drive.google.com/file/d/19SJRss2wGIU34KU_L9pJViT3MkMdiVuS/view?usp=sharing",
+    downloadHref:
+      "https://drive.google.com/uc?export=download&id=19SJRss2wGIU34KU_L9pJViT3MkMdiVuS",
+  },
+  {
+    title: "Cover Letter",
+    description:
+      "A focused introduction for QA engineering opportunities and product quality collaboration.",
+    fileType: "PDF",
+    href: "https://drive.google.com/file/d/1MzH1QKBnhX0vPavrDdxE1xl8wKCkhVaY/view?usp=sharing",
+    downloadHref:
+      "https://drive.google.com/uc?export=download&id=1MzH1QKBnhX0vPavrDdxE1xl8wKCkhVaY",
   },
 ];
 
