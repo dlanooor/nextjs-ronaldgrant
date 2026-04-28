@@ -6,11 +6,19 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="border-y border-neutral-950/10 bg-[#f8f1f5] py-20 sm:py-32 dark:border-white/10 dark:bg-[#151014]"
+      className="relative isolate overflow-hidden border-y border-neutral-950/10 bg-[#f8f1f5] py-20 sm:py-32 dark:border-white/10 dark:bg-[#151014]"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(118deg,rgba(219,39,119,0.08),transparent_34%,rgba(219,39,119,0.045)_74%,transparent),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:100%_100%,72px_72px,72px_72px] dark:bg-[linear-gradient(118deg,rgba(244,114,182,0.13),transparent_34%,rgba(244,114,182,0.06)_74%,transparent),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.035)_1px,transparent_1px)]"
+      />
       <Container>
-        <div className="premium-card reveal overflow-hidden rounded-2xl border border-neutral-950/10 bg-neutral-950 p-6 text-white sm:p-12 dark:border-white/10 dark:bg-neutral-950">
-          <div className="grid gap-10 sm:gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+        <div className="premium-card reveal overflow-hidden rounded-2xl border border-pink-700/15 bg-neutral-950/95 text-white shadow-2xl shadow-pink-950/10 backdrop-blur dark:border-pink-300/20 dark:bg-[#080807]/95">
+          <div
+            aria-hidden="true"
+            className="h-1.5 bg-gradient-to-r from-pink-600 via-pink-400 to-transparent dark:from-pink-300 dark:via-pink-400"
+          />
+          <div className="grid gap-10 p-6 sm:gap-12 sm:p-12 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <div>
               <SectionHeading
                 eyebrow={sections.contact.eyebrow}
@@ -18,13 +26,15 @@ export function ContactSection() {
                 description={sections.contact.description}
                 tone="dark"
               />
+              <div className="mt-8 h-px w-24 bg-gradient-to-r from-pink-300 via-pink-200 to-transparent" />
             </div>
 
             <div className="flex flex-col gap-4">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 py-3 text-center text-sm font-semibold text-neutral-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300 dark:hover:bg-neutral-200"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#fff4e6] px-5 py-3 text-center text-sm font-semibold text-neutral-950 shadow-lg shadow-pink-300/10 transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300"
               >
+                <SocialIcon label="Email" />
                 {profile.email}
               </a>
               <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
@@ -34,7 +44,7 @@ export function ContactSection() {
                     href={social.href}
                     target={social.href.startsWith("http") ? "_blank" : undefined}
                     rel={social.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white/80 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300 sm:flex-none"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-pink-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-[#f2e7dc] transition hover:-translate-y-0.5 hover:border-pink-300/35 hover:bg-pink-400/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-300 sm:flex-none"
                   >
                     <SocialIcon label={social.label} />
                     {social.label}

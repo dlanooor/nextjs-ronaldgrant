@@ -11,8 +11,12 @@ export function DownloadsSection() {
   return (
     <section
       id="downloads"
-      className="border-b border-neutral-950/10 bg-[#f3f6f1] py-20 sm:py-32 dark:border-white/10 dark:bg-neutral-900"
+      className="relative isolate overflow-hidden border-b border-neutral-950/10 bg-[#f3f6f1] py-20 sm:py-32 dark:border-white/10 dark:bg-[#080807]"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(118deg,rgba(219,39,119,0.065),transparent_34%,rgba(219,39,119,0.04)_74%,transparent),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:100%_100%,72px_72px,72px_72px] dark:bg-[linear-gradient(118deg,rgba(244,114,182,0.11),transparent_34%,rgba(244,114,182,0.055)_74%,transparent),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.035)_1px,transparent_1px)]"
+      />
       <Container>
         <DownloadsPanel />
       </Container>
@@ -30,52 +34,61 @@ export function DownloadsPanel({
 
   return (
     <div className={className}>
-      <SectionHeading {...sections.downloads} />
+      <div>
+        <SectionHeading {...sections.downloads} />
+        <div className="mt-8 h-px w-24 bg-gradient-to-r from-pink-600 via-pink-400 to-transparent dark:from-pink-300 dark:via-pink-200" />
+      </div>
 
       <div className="reveal reveal-delay-1 stagger-list mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         {documents.map((item) => (
           <article
             key={item.title}
-            className="premium-card card-lift flex min-h-full flex-col rounded-xl border border-neutral-950/10 bg-white p-5 sm:p-6 dark:border-white/10 dark:bg-neutral-950"
+            className="premium-card card-lift flex min-h-full flex-col overflow-hidden rounded-xl border border-neutral-950/10 bg-white/90 shadow-sm backdrop-blur dark:border-pink-300/25 dark:bg-[#080807]/90"
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-pink-50 text-pink-700 shadow-sm shadow-pink-900/5 dark:bg-pink-400/10 dark:text-pink-200">
-                <DocumentIcon />
+            <div
+              aria-hidden="true"
+              className="h-1.5 bg-gradient-to-r from-pink-600 via-pink-500 to-transparent dark:from-pink-300 dark:via-pink-400"
+            />
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div className="grid size-12 shrink-0 place-items-center rounded-xl border border-pink-700/20 bg-pink-50 text-pink-700 shadow-sm shadow-pink-900/5 dark:border-pink-300/25 dark:bg-pink-400/10 dark:text-pink-200">
+                  <DocumentIcon />
+                </div>
+                <span className="rounded-full border border-pink-700/20 bg-pink-50 px-3 py-1 font-mono text-xs font-semibold uppercase text-pink-700 dark:border-pink-300/25 dark:bg-pink-400/10 dark:text-pink-200">
+                  {item.fileType}
+                </span>
               </div>
-              <span className="rounded-full border border-neutral-950/10 bg-neutral-100 px-3 py-1 font-mono text-xs font-semibold uppercase text-neutral-600 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300">
-                {item.fileType}
-              </span>
-            </div>
 
-            <div className="mt-6 flex flex-1 flex-col">
-              <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-white">
-                {item.title}
-              </h3>
-              <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
-                {item.description}
-              </p>
+              <div className="mt-6 flex flex-1 flex-col">
+                <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-[#fff4e6]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 flex-1 border-l border-pink-700/20 pl-4 text-sm leading-7 text-neutral-600 dark:border-pink-300/20 dark:text-[#d7d0c8]">
+                  {item.description}
+                </p>
 
-              <div className={actionClassName}>
-                <a
-                  href={item.downloadHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Download ${item.title}`}
-                  className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-neutral-950 px-4 text-sm font-semibold text-white shadow-lg shadow-neutral-950/15 transition hover:-translate-y-0.5 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200 dark:focus-visible:ring-pink-400"
-                >
-                  <DownloadIcon />
-                  Download
-                </a>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Preview ${item.title} in Google Drive`}
-                  className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-neutral-950/15 bg-white px-4 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-950/30 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-white/15 dark:bg-neutral-900 dark:text-white dark:hover:border-white/30 dark:hover:bg-neutral-800 dark:focus-visible:ring-pink-400"
-                >
-                  <PreviewIcon />
-                  Preview
-                </a>
+                <div className={actionClassName}>
+                  <a
+                    href={item.downloadHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Download ${item.title}`}
+                    className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#fff4e6] px-4 text-sm font-semibold text-neutral-950 shadow-lg shadow-pink-900/10 transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:shadow-pink-300/10 dark:focus-visible:ring-pink-400"
+                  >
+                    <DownloadIcon />
+                    Download
+                  </a>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Preview ${item.title} in Google Drive`}
+                    className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-pink-700/20 bg-white/80 px-4 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-700/35 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-pink-300/20 dark:bg-white/5 dark:text-[#fff4e6] dark:hover:border-pink-300/35 dark:hover:bg-[#21191d] dark:focus-visible:ring-pink-400"
+                  >
+                    <PreviewIcon />
+                    Preview
+                  </a>
+                </div>
               </div>
             </div>
           </article>

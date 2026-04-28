@@ -7,17 +7,28 @@ import { projectArchive, projects, sections } from "@/lib/portfolio-data";
 
 export function ProjectsSection() {
   return (
-    <section id="works" className="bg-white py-20 sm:py-32 dark:bg-neutral-950">
+    <section
+      id="works"
+      className="relative isolate overflow-hidden bg-white py-20 sm:py-32 dark:bg-[#080807]"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(219,39,119,0.07),transparent_30%,rgba(245,158,11,0.055)_68%,transparent),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:100%_100%,72px_72px,72px_72px] dark:bg-[linear-gradient(125deg,rgba(244,114,182,0.12),transparent_30%,rgba(251,191,36,0.08)_68%,transparent),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.035)_1px,transparent_1px)]"
+      />
       <Container>
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading {...sections.projects} />
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <SectionHeading {...sections.projects} />
+            <div className="mt-8 h-px w-28 bg-gradient-to-r from-pink-600 via-amber-500 to-transparent dark:from-pink-300 dark:via-amber-300" />
+          </div>
           <a
             href={projectArchive.href}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-neutral-950/15 bg-white/70 px-4 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-white/30 dark:hover:bg-white/10 dark:focus-visible:ring-pink-400"
+            className="inline-flex h-12 w-fit items-center justify-center gap-2 rounded-xl border border-neutral-950/15 bg-white/80 px-5 text-sm font-semibold text-neutral-950 shadow-sm shadow-neutral-950/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-pink-700/30 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-pink-300/20 dark:bg-white/5 dark:text-[#fff4e6] dark:hover:border-pink-300/35 dark:hover:bg-[#21191d] dark:focus-visible:ring-pink-400"
           >
-            {projectArchive.label}
+            <span>{projectArchive.label}</span>
+            <ExternalLinkIcon className="size-3.5 shrink-0" />
           </a>
         </div>
 
@@ -39,15 +50,15 @@ export function ProjectsSection() {
                     "--card-accent-button": accent.button,
                   } as CSSProperties
                 }
-                className="premium-card accent-card card-lift group flex min-h-full flex-col overflow-hidden rounded-xl border border-neutral-950/10 bg-white dark:border-white/10 dark:bg-neutral-900"
+                className="premium-card accent-card card-lift group flex min-h-full flex-col overflow-hidden rounded-xl border border-neutral-950/10 bg-white/90 shadow-sm backdrop-blur dark:border-[color:var(--card-accent-border)] dark:bg-[#11100f]/90"
               >
                 <div
-                  className="h-1.5"
+                  className="h-1.5 bg-gradient-to-r from-[color:var(--card-accent)] via-[color:var(--card-accent)] to-transparent"
                   style={{ backgroundColor: accent.color }}
                 />
                 <div className="flex flex-1 flex-col p-5 sm:p-7">
                   <div className="mb-6 flex items-center justify-between gap-4">
-                    <div className="accent-logo grid size-14 shrink-0 place-items-center rounded-xl border border-neutral-950/10 bg-white p-2 shadow-sm dark:border-white/10 dark:bg-white">
+                    <div className="accent-logo grid size-14 shrink-0 place-items-center rounded-xl border border-[color:var(--card-accent-border)] bg-white p-2 shadow-sm shadow-neutral-950/5 dark:bg-white">
                       <Image
                         src={project.company.logo.src}
                         alt={project.company.logo.alt}
@@ -57,21 +68,21 @@ export function ProjectsSection() {
                         className="max-h-10 w-auto"
                       />
                     </div>
-                    <span className="accent-pill rounded-full border border-neutral-950/10 bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600 dark:border-white/10 dark:bg-neutral-800 dark:text-neutral-300">
+                    <span className="accent-pill rounded-full border border-[color:var(--card-accent-border)] bg-[color:var(--card-accent-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--card-accent-button)] dark:text-[color:var(--card-accent-link)]">
                       {project.company.name}
                     </span>
                   </div>
-                  <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-white">
+                  <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-[#fff4e6]">
                     {project.title}
                   </h3>
-                  <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+                  <p className="mt-4 flex-1 border-l border-[color:var(--card-accent-border)] pl-4 text-sm leading-7 text-neutral-600 dark:text-[#d7d0c8]">
                     {project.description}
                   </p>
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <li
                         key={tag}
-                        className="accent-chip rounded-lg bg-neutral-100 px-3 py-2 text-xs font-semibold text-neutral-700 transition dark:bg-neutral-800 dark:text-neutral-200"
+                        className="accent-chip rounded-lg border border-transparent bg-neutral-100 px-3 py-2 text-xs font-semibold text-neutral-700 transition dark:bg-[#1d1a18] dark:text-[#e5ded6]"
                       >
                         {tag}
                       </li>
