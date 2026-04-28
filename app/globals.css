@@ -252,6 +252,28 @@ section {
   color: var(--card-accent, #db2777);
 }
 
+.experience-scroll {
+  scrollbar-color: rgb(219 39 119 / 0.55) transparent;
+  scrollbar-width: thin;
+}
+
+.experience-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.experience-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experience-scroll::-webkit-scrollbar-thumb {
+  background: rgb(219 39 119 / 0.45);
+  border-radius: 999px;
+}
+
+.experience-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(219 39 119 / 0.65);
+}
+
 .accent-card:hover .accent-logo {
   border-color: var(--card-accent-border, rgb(236 72 153 / 0.42));
   box-shadow: 0 0 0 4px var(--card-accent-soft, rgb(236 72 153 / 0.14));

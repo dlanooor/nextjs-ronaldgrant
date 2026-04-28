@@ -89,9 +89,9 @@ export const sections = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Let us improve product quality together.",
+    title: "Let’s link up!",
     description:
-      "Reach out for QA engineering roles, test strategy discussions, mentoring, or collaboration opportunities.",
+      "Feel free to reach out for QA engineering roles, strategy discussions, mentoring, or any collaboration opportunities.",
   },
 };
 

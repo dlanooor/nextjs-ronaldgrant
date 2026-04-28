@@ -2,66 +2,86 @@ import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { documents, sections } from "@/lib/portfolio-data";
 
+type DownloadsPanelProps = {
+  className?: string;
+  compact?: boolean;
+};
+
 export function DownloadsSection() {
   return (
     <section
       id="downloads"
       className="border-b border-neutral-950/10 bg-[#f3f6f1] py-20 sm:py-32 dark:border-white/10 dark:bg-neutral-900"
     >
-      <Container className="grid gap-10 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-        <SectionHeading {...sections.downloads} />
-
-        <div className="reveal reveal-delay-1 stagger-list grid gap-5 sm:grid-cols-2">
-          {documents.map((item) => (
-            <article
-              key={item.title}
-              className="premium-card card-lift flex min-h-full flex-col rounded-xl border border-neutral-950/10 bg-white p-5 sm:p-6 dark:border-white/10 dark:bg-neutral-950"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-pink-50 text-pink-700 shadow-sm shadow-pink-900/5 dark:bg-pink-400/10 dark:text-pink-200">
-                  <DocumentIcon />
-                </div>
-                <span className="rounded-full border border-neutral-950/10 bg-neutral-100 px-3 py-1 font-mono text-xs font-semibold uppercase text-neutral-600 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300">
-                  {item.fileType}
-                </span>
-              </div>
-
-              <div className="mt-6 flex flex-1 flex-col">
-                <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
-                  {item.description}
-                </p>
-
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={item.downloadHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Download ${item.title}`}
-                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-neutral-950 px-4 text-sm font-semibold text-white shadow-lg shadow-neutral-950/15 transition hover:-translate-y-0.5 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200 dark:focus-visible:ring-pink-400"
-                  >
-                    <DownloadIcon />
-                    Download
-                  </a>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Preview ${item.title} in Google Drive`}
-                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-neutral-950/15 bg-white px-4 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-950/30 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-white/15 dark:bg-neutral-900 dark:text-white dark:hover:border-white/30 dark:hover:bg-neutral-800 dark:focus-visible:ring-pink-400"
-                  >
-                    <PreviewIcon />
-                    Preview
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+      <Container>
+        <DownloadsPanel />
       </Container>
     </section>
+  );
+}
+
+export function DownloadsPanel({
+  className = "",
+  compact = false,
+}: DownloadsPanelProps) {
+  const actionClassName = compact
+    ? "mt-6 grid gap-3"
+    : "mt-6 grid gap-3 sm:grid-cols-2";
+
+  return (
+    <div className={className}>
+      <SectionHeading {...sections.downloads} />
+
+      <div className="reveal reveal-delay-1 stagger-list mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        {documents.map((item) => (
+          <article
+            key={item.title}
+            className="premium-card card-lift flex min-h-full flex-col rounded-xl border border-neutral-950/10 bg-white p-5 sm:p-6 dark:border-white/10 dark:bg-neutral-950"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-pink-50 text-pink-700 shadow-sm shadow-pink-900/5 dark:bg-pink-400/10 dark:text-pink-200">
+                <DocumentIcon />
+              </div>
+              <span className="rounded-full border border-neutral-950/10 bg-neutral-100 px-3 py-1 font-mono text-xs font-semibold uppercase text-neutral-600 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300">
+                {item.fileType}
+              </span>
+            </div>
+
+            <div className="mt-6 flex flex-1 flex-col">
+              <h3 className="font-display text-xl font-semibold leading-7 text-neutral-950 dark:text-white">
+                {item.title}
+              </h3>
+              <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+                {item.description}
+              </p>
+
+              <div className={actionClassName}>
+                <a
+                  href={item.downloadHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Download ${item.title}`}
+                  className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-neutral-950 px-4 text-sm font-semibold text-white shadow-lg shadow-neutral-950/15 transition hover:-translate-y-0.5 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200 dark:focus-visible:ring-pink-400"
+                >
+                  <DownloadIcon />
+                  Download
+                </a>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Preview ${item.title} in Google Drive`}
+                  className="inline-flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-neutral-950/15 bg-white px-4 text-sm font-semibold text-neutral-950 shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-950/30 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:border-white/15 dark:bg-neutral-900 dark:text-white dark:hover:border-white/30 dark:hover:bg-neutral-800 dark:focus-visible:ring-pink-400"
+                >
+                  <PreviewIcon />
+                  Preview
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
   );
 }
 
