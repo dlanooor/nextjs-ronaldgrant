@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, SVGProps } from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/container";
@@ -36,6 +36,7 @@ export function ProjectsSection() {
                     "--card-accent-border": accent.border,
                     "--card-accent-soft": accent.soft,
                     "--card-accent-link": accent.link,
+                    "--card-accent-button": accent.button,
                   } as CSSProperties
                 }
                 className="premium-card accent-card card-lift group flex min-h-full flex-col overflow-hidden rounded-xl border border-neutral-950/10 bg-white dark:border-white/10 dark:bg-neutral-900"
@@ -76,7 +77,7 @@ export function ProjectsSection() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-7 grid grid-cols-2 gap-2">
                     {project.links.map((link) => (
                       <a
                         key={link.label}
@@ -84,9 +85,10 @@ export function ProjectsSection() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`Open ${project.company.name} ${link.label}`}
-                        className="accent-link rounded-md text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600 dark:focus-visible:ring-pink-400"
+                        className="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl border border-[color:var(--card-accent-border)] bg-[color:var(--card-accent-soft)] px-3 text-sm font-semibold text-[color:var(--card-accent-button)] shadow-sm shadow-neutral-950/5 transition hover:-translate-y-0.5 hover:bg-[color:var(--card-accent)] hover:text-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--card-accent-border)] dark:bg-white/5 dark:text-[color:var(--card-accent-link)] dark:hover:bg-[color:var(--card-accent)] dark:hover:text-white"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <ExternalLinkIcon className="size-3.5 shrink-0" />
                       </a>
                     ))}
                   </div>
@@ -109,6 +111,7 @@ function projectAccent(index: number) {
       border: "rgb(219 39 119 / 0.45)",
       soft: "rgb(219 39 119 / 0.15)",
       link: "#f472b6",
+      button: "#be185d",
     },
     {
       color: "#2563eb",
@@ -117,6 +120,7 @@ function projectAccent(index: number) {
       border: "rgb(37 99 235 / 0.45)",
       soft: "rgb(37 99 235 / 0.15)",
       link: "#60a5fa",
+      button: "#1d4ed8",
     },
     {
       color: "#f59e0b",
@@ -125,8 +129,35 @@ function projectAccent(index: number) {
       border: "rgb(245 158 11 / 0.45)",
       soft: "rgb(245 158 11 / 0.15)",
       link: "#fbbf24",
+      button: "#b45309",
     },
   ];
 
   return accents[index % accents.length];
+}
+
+function ExternalLinkIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M5.25 4.25H11.75V10.75"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+      <path
+        d="M11.5 4.5L4.25 11.75"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
 }
