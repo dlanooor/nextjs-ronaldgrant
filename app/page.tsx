@@ -7,12 +7,10 @@ import { ProjectsSection } from "@/components/projects-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SkillsSection } from "@/components/skills-section";
-import { WelcomePopup } from "@/components/welcome-popup";
 
 export default function Home() {
   return (
     <>
-      <WelcomePopup />
       <SiteHeader />
       <main>
         <HeroSection />
