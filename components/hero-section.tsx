@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { AnimatedStatValue } from "@/components/animated-stat-value";
 import { Container } from "@/components/container";
+import { TypingRoleText } from "@/components/typing-role-text";
 import { hero, heroStats, profile } from "@/lib/portfolio-data";
 
 export function HeroSection() {
@@ -22,10 +23,10 @@ export function HeroSection() {
           <h1 className="mt-6 max-w-3xl bg-[linear-gradient(135deg,#171717_0%,#9f1239_54%,#334155_100%)] bg-clip-text font-display text-5xl font-semibold leading-[0.95] text-transparent sm:mt-7 sm:text-7xl lg:text-8xl dark:bg-[linear-gradient(135deg,#fff8ed_0%,#f4bdd6_46%,#cfe9dc_100%)]">
             {profile.name}
           </h1>
-          <div className="mt-5 flex items-center gap-3">
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             <span className="h-px w-10 bg-pink-700/55 dark:bg-[#f0b7cf]/70" />
-            <p className="font-display text-2xl font-medium text-neutral-700 sm:text-3xl dark:text-[#f2e7dc]">
-              {profile.role}
+            <p className="min-w-0 font-display text-xl font-medium leading-tight text-neutral-700 sm:text-3xl dark:text-[#f2e7dc]">
+              <TypingRoleText words={profile.roleHighlights} />
             </p>
           </div>
           <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-600 sm:mt-7 sm:text-xl sm:leading-9 dark:text-[#d7d0c8]">

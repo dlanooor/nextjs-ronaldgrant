@@ -2,6 +2,13 @@ export const profile = {
   name: "Ronald Grant",
   initials: "RG",
   role: "Quality Assurance Engineer",
+  roleHighlights: [
+    "Quality Assurance Engineer",
+    "QA Automation Engineer",
+    "API Testing Specialist",
+    "Test Strategy Builder",
+    "Product Quality Assurance",
+  ],
   location: "Kota Tangerang Selatan, Banten, Indonesia",
   email: "ronaldgrantt@gmail.com",
   siteUrl: "https://ronaldgrant.dev",
@@ -301,9 +308,9 @@ export const documents = [
     description:
       "A concise overview of QA engineering experience, automation tools, product domains, and education.",
     fileType: "PDF",
-    href: "https://drive.google.com/file/d/19SJRss2wGIU34KU_L9pJViT3MkMdiVuS/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1UMttqsqriU21Y3SRqVyaZQQBb7rgcmxE/view?usp=sharing",
     downloadHref:
-      "https://drive.google.com/uc?export=download&id=19SJRss2wGIU34KU_L9pJViT3MkMdiVuS",
+      "https://drive.google.com/uc?export=download&id=1UMttqsqriU21Y3SRqVyaZQQBb7rgcmxE",
   },
   {
     title: "Cover Letter",
